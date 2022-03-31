@@ -28,10 +28,24 @@ class Chat extends React.Component<IProps, IState> {
 		const socket = this.props.socket;
 		const username = this.props.username;
 		const messages = this.props.messages;
+		const title = this.props.title;
+
+		this.state = {
+			messages: messages,
+			socket: socket,
+			username: username,
+			value: '',
+			online: 0,
+			title: title,
+		};
 
 		socket.on('connect', () => {
 			const credentials = { name: this.props.username, userId: socket.id };
 			socket.emit('setId', credentials);
+		});
+
+		socket.on('online', (content) => {
+			this.setState({ online: content.data });
 		});
 
 		socket.on('left', (content) => {
@@ -46,12 +60,6 @@ class Chat extends React.Component<IProps, IState> {
 			this.addItem(content);
 		});
 
-		this.state = {
-			messages: messages,
-			socket: socket,
-			username: username,
-			value: '',
-		};
 		this.onSubmit.bind(this);
 		this.onChange.bind(this);
 	}
@@ -79,6 +87,11 @@ class Chat extends React.Component<IProps, IState> {
 	render() {
 		return (
 			<React.StrictMode>
+				<nav class="navbar">
+					<span class="navbar-title">
+						{`${this.state.title} - ${this.state.online} Online`}
+					</span>
+				</nav>
 				<Messages
 					username={this.state.username}
 					content={this.state.messages}

@@ -8,7 +8,7 @@
 		"build-and-start": "npm run build && npm run start",
 		"build": "run-script-os",
 		"build:win32": "npm run build:copy && npm run build:tsc || VER>NUL && npm run build:jsx",
-		"build:darwin:linux": "npm run build:copy && npm run build:tsc || true",
+		"build:darwin:linux": "npm run build:copy && npm run build:tsc || true && npm run build:jsx",
 		"build:copy": "npx cpx \"src/**/*.!(*ts|*tsx)\" dist --verbose",
 		"build:tsc": "npx tsc",
 		"build:jsx": "npx babel dist --out-dir dist --ignore **/*.js --presets @babel/preset-react",

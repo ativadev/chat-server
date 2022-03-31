@@ -1,5 +1,6 @@
 'use strict';
-import { React, useState, useEffect } from 'react';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
@@ -21,19 +22,20 @@ interface IState {
 }
 
 const InputForm = function (props: IProps) {
-	[value, setValue] = useState(props.value);
+	const [value, setValue] = useState('');
+
 	useEffect(() => {
 		setValue(props.value);
-	}, [value]);
+	});
 
 	return (
 		<Box>
-			<form id={'form'} onSubmit={this.props.handleSubmit}>
+			<form id={'form'} onSubmit={props.handleSubmit}>
 				<TextField
 					fullWidth
-					value={this.state.value}
+					value={value}
 					autoComplete="off"
-					onChange={this.props.handleChange}
+					onChange={props.handleChange}
 				/>
 				<button type={'submit'} className={'btn-primary'}>
 					Enviar

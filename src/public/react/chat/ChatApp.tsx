@@ -1,9 +1,9 @@
 'use strict';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
 
 import Messages from './Messages.jsx';
 import InputForm from './InputForm.jsx';
+import Navbar from './Navbar.jsx';
 
 interface IMessage {
 	data: string;
@@ -90,11 +90,7 @@ class Chat extends React.Component<IProps, IState> {
 	render() {
 		return (
 			<>
-				<nav class="navbar">
-					<span class="navbar-title">
-						{`${this.state.title} - ${this.state.online} Online`}
-					</span>
-				</nav>
+				<Navbar title={this.state.title} buttonTitle={'Online'} />
 				<Messages
 					username={this.state.username}
 					content={this.state.messages}

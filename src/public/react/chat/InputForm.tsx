@@ -1,6 +1,7 @@
 'use strict';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { React, useState, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 interface IMessage {
 	data: string;
@@ -19,37 +20,62 @@ interface IState {
 	value: string;
 }
 
-class InputForm extends React.Component<IProps, IState> {
-	constructor(props) {
-		super(props);
-		this.state = { value: this.props.value };
-		// this.handleChange = this.handleChange.bind(this);
-		// this.handleSubmit = this.handleSubmit.bind(this);
-	}
+const InputForm = function (props: IProps) {
+	[value, setValue] = useState(props.value);
+	useEffect(() => {
+		setValue(props.value);
+	}, [value]);
 
-	componentWillReceiveProps(nextProps: IProps) {
-		this.setState(nextProps);
-	}
-
-	// handleSubmit(e) {
-	// 	this.props.handleSubmit(e, this);
-	// }
-
-	render() {
-		return (
+	return (
+		<Box>
 			<form id={'form'} onSubmit={this.props.handleSubmit}>
-				<input
+				<TextField
+					fullWidth
 					value={this.state.value}
-					id={'input'}
-					autoComplete={'off'}
+					autoComplete="off"
 					onChange={this.props.handleChange}
 				/>
 				<button type={'submit'} className={'btn-primary'}>
 					Enviar
 				</button>
 			</form>
-		);
-	}
-}
+		</Box>
+	);
+};
+
+// class InputForm extends React.Component<IProps, IState> {
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = { value: this.props.value };
+// 		// this.handleChange = this.handleChange.bind(this);
+// 		// this.handleSubmit = this.handleSubmit.bind(this);
+// 	}
+//
+// 	componentWillReceiveProps(nextProps: IProps) {
+// 		this.setState(nextProps);
+// 	}
+//
+// 	// handleSubmit(e) {
+// 	// 	this.props.handleSubmit(e, this);
+// 	// }
+//
+// 	render() {
+// 		return (
+// 			<Box>
+// 				<form id={'form'} onSubmit={this.props.handleSubmit}>
+// 					<TextField
+// 						fullWidth
+// 						value={this.state.value}
+// 						autoComplete="off"
+// 						onChange={this.props.handleChange}
+// 					/>
+// 					<button type={'submit'} className={'btn-primary'}>
+// 						Enviar
+// 					</button>
+// 				</form>
+// 			</Box>
+// 		);
+// 	}
+// }
 
 export default InputForm;

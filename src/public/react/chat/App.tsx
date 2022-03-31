@@ -1,6 +1,8 @@
 'use strict';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './Theme.jsx';
 import Chat from './ChatApp.jsx';
 
 interface IProps {}
@@ -37,12 +39,14 @@ class App extends React.Component<IProps, IState> {
 		];
 		return (
 			<React.StrictMode>
-				<Chat
-					title={'Chat'}
-					socket={this.state.socket}
-					username={this.state.username}
-					messages={messages}
-				/>
+				<ThemeProvider theme={theme}>
+					<Chat
+						title={'Chat'}
+						socket={this.state.socket}
+						username={this.state.username}
+						messages={messages}
+					/>
+				</ThemeProvider>
 			</React.StrictMode>
 		);
 	}

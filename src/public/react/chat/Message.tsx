@@ -1,6 +1,5 @@
 'use strict';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
 
 interface IProps {
 	className: string;
@@ -9,14 +8,8 @@ interface IProps {
 
 interface IState {}
 
-class Message extends React.Component<IProps, IState> {
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
-		return <li className={this.props.className}>{this.props.text}</li>;
-	}
-}
+const Message = function (props: IProps) {
+	return <li className={props.className}>{props.text}</li>;
+};
 
 export default Message;

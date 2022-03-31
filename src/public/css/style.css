@@ -16,7 +16,6 @@ a:visited {
 }
 
 div[id="content"] {
-	padding-top: 2.5rem;
 	min-height: calc(80vh)
 }
 

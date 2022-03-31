@@ -1,12 +1,15 @@
 const path = require('path');
+const srcDir = './dist/public/react';
+const outDir = '../../dist/public/react';
 
 module.exports = {
+	mode: 'production',
 	entry: {
-		chat: './dist/public/react/chat/App.jsx',
+		chat: srcDir + '/chat/App.jsx',
 	},
 	output: {
-		path: path.resolve(__dirname, '../../dist/public/react'),
-		filename: '[name].js',
+		path: path.resolve(__dirname, outDir),
+		filename: '[name].min.js',
 	},
 	module: {
 		rules: [

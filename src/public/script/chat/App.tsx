@@ -35,12 +35,14 @@ class App extends React.Component<IProps, IState> {
 			},
 		];
 		return (
-			<Chat
-				title={'Chat'}
-				socket={this.state.socket}
-				username={this.state.username}
-				messages={messages}
-			/>
+			<React.StrictMode>
+				<Chat
+					title={'Chat'}
+					socket={this.state.socket}
+					username={this.state.username}
+					messages={messages}
+				/>
+			</React.StrictMode>
 		);
 	}
 }

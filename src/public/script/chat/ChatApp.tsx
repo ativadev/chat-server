@@ -86,7 +86,7 @@ class Chat extends React.Component<IProps, IState> {
 
 	render() {
 		return (
-			<React.StrictMode>
+			<>
 				<nav class="navbar">
 					<span class="navbar-title">
 						{`${this.state.title} - ${this.state.online} Online`}
@@ -101,7 +101,7 @@ class Chat extends React.Component<IProps, IState> {
 					handleChange={(e) => this.onChange(e)}
 					handleSubmit={(e) => this.onSubmit(e)}
 				/>
-			</React.StrictMode>
+			</>
 		);
 	}
 }

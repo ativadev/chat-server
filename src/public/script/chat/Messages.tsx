@@ -54,7 +54,7 @@ class Messages extends React.Component<IProps, IState> {
 	render() {
 		const messages = this.listarMensagens(this.state.content);
 		return (
-			<div style={{ position: 'relative' }}>
+			<div>
 				<ul id="messages">{messages}</ul>
 			</div>
 		);

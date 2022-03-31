@@ -1,6 +1,8 @@
 'use strict';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Message from './Message.js';
+import Message from './Message.jsx';
 
 interface IMessage {
 	data: string;

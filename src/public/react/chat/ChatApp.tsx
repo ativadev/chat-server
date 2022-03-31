@@ -1,6 +1,9 @@
 'use strict';
-import Messages from './Messages.js';
-import InputForm from './InputForm.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Messages from './Messages.jsx';
+import InputForm from './InputForm.jsx';
 
 interface IMessage {
 	data: string;

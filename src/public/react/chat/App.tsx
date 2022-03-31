@@ -1,6 +1,7 @@
 'use strict';
-// import Tabs from './Tabs.js';
-import Chat from './ChatApp.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Chat from './ChatApp.jsx';
 
 interface IProps {}
 

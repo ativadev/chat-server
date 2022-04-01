@@ -90,7 +90,7 @@ class Chat extends React.Component<IProps, IState> {
 	render() {
 		return (
 			<>
-				<Navbar title={this.state.title} buttonTitle={'Online'} />
+				<Navbar title={this.state.title} online={this.state.online} />
 				<Messages
 					username={this.state.username}
 					content={this.state.messages}

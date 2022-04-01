@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 	...theme.typography.body2,
 	padding: theme.spacing(1),
 	textAlign: 'left',
-	color: theme.palette.text.secondary,
+	color: theme.palette.text.primary,
 }));
 
 const DarkItem = styled(Paper)(({ theme }) => ({
@@ -23,7 +23,7 @@ const DarkItem = styled(Paper)(({ theme }) => ({
 	...theme.typography.body2,
 	padding: theme.spacing(1),
 	textAlign: 'left',
-	color: theme.palette.text.secondary,
+	color: theme.palette.text.primary,
 }));
 
 const InfoItem = styled(Paper)(({ theme }) => ({
@@ -36,17 +36,17 @@ const InfoItem = styled(Paper)(({ theme }) => ({
 }));
 
 const Message = (props: IProps) => {
-	return <Item>{`[${props.timeStamp}] ${props.name} >> ${props.text}`}</Item>;
-};
-
-const ExternalMessage = (props: IProps) => {
 	return (
 		<DarkItem>{`[${props.timeStamp}] ${props.name} >> ${props.text}`}</DarkItem>
 	);
 };
 
+const ExternalMessage = (props: IProps) => {
+	return <Item>{`[${props.timeStamp}] ${props.name} >> ${props.text}`}</Item>;
+};
+
 const SystemMessage = (props: IProps) => {
-	return <InfoItem>{`[${props.timeStamp}] >> ${props.text}`}</InfoItem>;
+	return <InfoItem>{`[SISTEMA] >> ${props.text}`}</InfoItem>;
 };
 
 export { Message, ExternalMessage, SystemMessage };

@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
 
 interface IProps {
 	value: string;
@@ -20,7 +21,11 @@ const InputForm = function (props: IProps) {
 	});
 
 	return (
-		<Box color="secondary">
+		<Stack
+			direction="row"
+			justifyContent="flex-end"
+			alignItems="baseline"
+			spacing={1}>
 			<form id={'form'} onSubmit={props.handleSubmit}>
 				<TextField
 					size="small"
@@ -30,6 +35,7 @@ const InputForm = function (props: IProps) {
 					color="primary"
 					autoComplete="off"
 					variant="outlined"
+					sx={{ bgcolor: 'white' }}
 					fullWidth
 				/>
 				<Button
@@ -37,11 +43,11 @@ const InputForm = function (props: IProps) {
 					color="secondary"
 					endIcon={<SendIcon />}
 					type={'submit'}
-					className={'btn-primary'}>
+					sx={{ ml: '5px' }}>
 					Enviar
 				</Button>
 			</form>
-		</Box>
+		</Stack>
 	);
 };
 

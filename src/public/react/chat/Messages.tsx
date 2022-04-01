@@ -1,7 +1,8 @@
 'use strict';
 import * as React from 'react';
+import Stack from '@mui/material/Stack';
 
-import Message from './Message.jsx';
+import { Message, ExternalMessage, SystemMessage } from './Message.jsx';
 
 interface IMessage {
 	data: string;
@@ -37,27 +38,32 @@ class Messages extends React.Component<IProps, IState> {
 
 	listarMensagens(messages: IMessage[]) {
 		return messages.map((item) => {
-			const className =
-				item.type === 'info'
-					? 'info'
-					: item.name !== this.state.username
-					? ''
-					: 'dark';
-			const text =
-				item.type === 'message'
-					? `[${item.timeStamp}] ${item.name} >> ${item.data}`
-					: `${item.data}`;
-
-			return <Message text={text} className={className} />;
+			const timeStamp = new Date().toLocaleString();
+			if (item.type === 'info') {
+				return <SystemMessage timeStamp={timeStamp} text={item.data} />;
+			}
+			return item.name === this.state.username ? (
+				<Message timeStamp={item.timeStamp} name={item.name} text={item.data} />
+			) : (
+				<ExternalMessage
+					timeStamp={item.timeStamp}
+					name={item.name}
+					text={item.data}
+				/>
+			);
 		});
 	}
 
 	render() {
 		const messages = this.listarMensagens(this.state.content);
 		return (
-			<div>
-				<ul id="messages">{messages}</ul>
-			</div>
+			<Stack
+				direction="column"
+				justifyContent="flex-start"
+				alignItems="flex-start"
+				spacing={0.5}>
+				{messages}
+			</Stack>
 		);
 	}
 }

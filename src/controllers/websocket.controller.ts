@@ -23,6 +23,7 @@ const config = async (server) => {
 		socket.on('setId', (data) => {
 			webSocket.log(`Novo usuário: ${data.name}`);
 			socket.broadcast.emit('joined', {
+				timeStamp: new Date().toLocaleString(),
 				data: `${data.name} se juntou!`,
 				type: 'info',
 			});
@@ -52,7 +53,11 @@ const config = async (server) => {
 				return;
 			} else {
 				webSocket.log(`Usuário ${user.name} desconectado!`);
-				const msg = { data: `${user.name} deixou a sala...`, type: 'info' };
+				const msg = {
+					timeStamp: new Date().toLocaleString(),
+					data: `${user.name} deixou a sala...`,
+					type: 'info',
+				};
 				users.splice(users.indexOf(user), 1);
 				socket.broadcast.emit('left', msg);
 				atualizarOnline();

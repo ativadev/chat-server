@@ -16,7 +16,7 @@ a:visited {
 }
 
 div[id="content"] {
-	min-height: calc(80vh)
+	padding-top: 4.5rem;
 }
 
 .navbar {

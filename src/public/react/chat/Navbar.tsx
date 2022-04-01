@@ -16,7 +16,7 @@ function Navbar(props) {
 		setOnline(props.online);
 	});
 	return (
-		<AppBar color="secondary" position="fixed">
+		<AppBar color="primary" position="fixed">
 			<Toolbar>
 				<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 					{props.title}

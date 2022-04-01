@@ -34,7 +34,7 @@ const InputForm = function (props: IProps) {
 				/>
 				<Button
 					variant="contained"
-					color="primary"
+					color="secondary"
 					endIcon={<SendIcon />}
 					type={'submit'}
 					className={'btn-primary'}>

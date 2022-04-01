@@ -1,7 +1,7 @@
 'use strict';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import theme from './Theme.jsx';
 import Chat from './ChatApp.jsx';
 

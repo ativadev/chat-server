@@ -3,22 +3,13 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
-interface IMessage {
-	data: string;
-	type: string;
-	name?: string;
-	timeStamp?: string;
-}
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 
 interface IProps {
 	value: string;
 	handleSubmit: any;
 	handleChange: any;
-}
-
-interface IState {
-	value: string;
 }
 
 const InputForm = function (props: IProps) {
@@ -29,17 +20,24 @@ const InputForm = function (props: IProps) {
 	});
 
 	return (
-		<Box>
+		<Box color="secondary">
 			<form id={'form'} onSubmit={props.handleSubmit}>
 				<TextField
-					fullWidth
 					value={value}
-					autoComplete="off"
 					onChange={props.handleChange}
+					color="primary"
+					autoComplete="off"
+					variant="outlined"
+					fullWidth
 				/>
-				<button type={'submit'} className={'btn-primary'}>
+				<Button
+					variant="contained"
+					color="primary"
+					endIcon={<SendIcon />}
+					type={'submit'}
+					className={'btn-primary'}>
 					Enviar
-				</button>
+				</Button>
 			</form>
 		</Box>
 	);

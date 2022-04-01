@@ -12,7 +12,7 @@ function Navbar(props) {
 	const theme = useTheme();
 	console.log(theme);
 	return (
-		<AppBar color={theme.secondary} position="fixed">
+		<AppBar color="secondary" position="fixed">
 			<Toolbar>
 				<IconButton
 					size="large"

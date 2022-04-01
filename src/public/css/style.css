@@ -1,8 +1,8 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
-	color: var(--text-color);
-	background-color: var(--background-color);
+	/* color: var(--text-color); */
+	/* background-color: var(--background-color); */
 	font-size: 0.9rem;
 	margin: 0;
 }

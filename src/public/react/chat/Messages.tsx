@@ -40,7 +40,7 @@ class Messages extends React.Component<IProps, IState> {
 			const className =
 				item.type === 'info'
 					? 'info'
-					: item.name === this.state.username
+					: item.name !== this.state.username
 					? ''
 					: 'dark';
 			const text =

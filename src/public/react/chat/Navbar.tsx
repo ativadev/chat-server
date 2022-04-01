@@ -27,31 +27,4 @@ function Navbar(props) {
 	);
 }
 
-// class Navbar extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 	}
-//
-// 	render() {
-// 		return (
-// 			<AppBar color="secondary" position="fixed">
-// 				<Toolbar>
-// 					<IconButton
-// 						size="large"
-// 						edge="start"
-// 						color="inherit"
-// 						aria-label="menu"
-// 						sx={{ mr: 2 }}>
-// 						<MenuIcon />
-// 					</IconButton>
-// 					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-// 						{this.props.title}
-// 					</Typography>
-// 					<Button color="inherit">{this.props.buttonTitle}</Button>
-// 				</Toolbar>
-// 			</AppBar>
-// 		);
-// 	}
-// }
-
 export default Navbar;

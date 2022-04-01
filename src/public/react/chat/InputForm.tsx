@@ -51,39 +51,4 @@ const InputForm = function (props: IProps) {
 	);
 };
 
-// class InputForm extends React.Component<IProps, IState> {
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = { value: this.props.value };
-// 		// this.handleChange = this.handleChange.bind(this);
-// 		// this.handleSubmit = this.handleSubmit.bind(this);
-// 	}
-//
-// 	componentWillReceiveProps(nextProps: IProps) {
-// 		this.setState(nextProps);
-// 	}
-//
-// 	// handleSubmit(e) {
-// 	// 	this.props.handleSubmit(e, this);
-// 	// }
-//
-// 	render() {
-// 		return (
-// 			<Box>
-// 				<form id={'form'} onSubmit={this.props.handleSubmit}>
-// 					<TextField
-// 						fullWidth
-// 						value={this.state.value}
-// 						autoComplete="off"
-// 						onChange={this.props.handleChange}
-// 					/>
-// 					<button type={'submit'} className={'btn-primary'}>
-// 						Enviar
-// 					</button>
-// 				</form>
-// 			</Box>
-// 		);
-// 	}
-// }
-
 export default InputForm;

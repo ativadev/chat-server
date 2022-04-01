@@ -13,16 +13,19 @@ interface IMessage {
 }
 
 interface IProps {
+	title: string;
 	socket: any;
 	username: string;
 	messages: IMessage[];
 }
 
 interface IState {
-	socket: any;
 	messages: IMessage[];
+	socket: any;
 	username: string;
 	value: string;
+	online: number;
+	title: string;
 }
 
 class Chat extends React.Component<IProps, IState> {

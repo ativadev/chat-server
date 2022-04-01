@@ -23,6 +23,7 @@ const InputForm = function (props: IProps) {
 		<Box color="secondary">
 			<form id={'form'} onSubmit={props.handleSubmit}>
 				<TextField
+					size="small"
 					label="Mensagem"
 					value={value}
 					onChange={props.handleChange}

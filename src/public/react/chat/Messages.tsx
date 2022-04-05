@@ -61,7 +61,7 @@ class Messages extends React.Component<IProps, IState> {
 				direction="column"
 				justifyContent="flex-start"
 				alignItems="flex-start"
-				spacing={0.5}>
+				spacing={1}>
 				{messages}
 			</Stack>
 		);
